@@ -8,6 +8,11 @@ The program allows reading/writing from/to the EPROM. Originally designed by Rob
 
 I developed my own Qt application to comunicate with the device and give the project a fancy look.
 
+## Compilation notes:
+- The program was developed using Qt 5.10 and tested in Windows 7 using MinGW 32bits compiler. 
+
+- Once compiled, Qt will generate a release/debug folder for the binaries,  "graphics" folder it is needed to be copied into it manually.
+
 ## Project
 Original project by Robson Couto, all credit, thanks (and complains) to him:
 
