@@ -95,27 +95,32 @@ void MainWindow::on_readButton_clicked()
         serial = new QSerialPort(this);
         serial->setPortName(ui->portComboBox->currentText());
         serial->open(QIODevice::ReadWrite);
-        serial->setBaudRate(getBaudRate());
-        serial->setDataBits(QSerialPort::Data8);
-        serial->setFlowControl(QSerialPort::NoFlowControl);
-        serial->setParity(QSerialPort::NoParity);
-        serial->setStopBits(QSerialPort::OneStop);
+        if(serial->isOpen()){
+            serial->setBaudRate(getBaudRate());
+            serial->setDataBits(QSerialPort::Data8);
+            serial->setFlowControl(QSerialPort::NoFlowControl);
+            serial->setParity(QSerialPort::NoParity);
+            serial->setStopBits(QSerialPort::OneStop);
+            QObject::connect(serial,SIGNAL(readyRead()),this,SLOT(readSerial()));
+            QThread::msleep(500);
+            serial->clear(QSerialPort::AllDirections);
+            serial->write("U",1);
+            serial->write(&readCommands[ui->epromSelector->currentIndex()],1);
+            //qDebug()<<readCommands[ui->epromSelector->currentIndex()];
+            r = new ReadingDialog(this);
+            r->show();
+            r->setText("Reading EPROM content...",Qt::darkGreen);
+            connect(r,SIGNAL(rejected()),this,SLOT(cancelReading()));
 
-        QObject::connect(serial,SIGNAL(readyRead()),this,SLOT(readSerial()));
-        QThread::msleep(500);
-        serial->write("U",1);
-        serial->write(&readCommands[ui->epromSelector->currentIndex()],1);
-
-        r = new ReadingDialog(this);
-        r->show();
-        r->setText("Reading EPROM content...",Qt::darkGreen);
-        connect(r,SIGNAL(rejected()),this,SLOT(cancelReading()));
-
-        readMode=0;
+            readMode=0;
+        }
+        else{
+            QMessageBox::information(0,"Error !!","Could not open port");
+        }
     }
     else{
         outputFile->close();
-        QMessageBox::information(0,"Error !!","Could not open port");
+        QMessageBox::information(0,"Error !!","Could not open file");
     }
 }
 
@@ -167,7 +172,7 @@ void MainWindow::readSerial()
                         isEqual=false;
                         QString message = "Found mismatch at byte: ";
                         message = message + QString::number(total+var);
-                        message = message + "\nEPROM byte: " + QString::number((unsigned int)serialData.at(var)) + " file byte: " + QString::number((unsigned int)datafile);
+                        message = message + "\nEPROM byte: " + QString::number((unsigned char)serialData.at(var)) + " file byte: " + QString::number((unsigned char)datafile);
                         r->setText(message,Qt::red);
                         cancelReading();
                         inputFile->close();
@@ -240,6 +245,8 @@ void MainWindow::on_writeButton_clicked()
 }
 void MainWindow::writeEprom(){
     //qDebug()<<"writing";
+
+    //serial->clear(QSerialPort::AllDirections);
     r = new ReadingDialog(this);
     r->setWindowTitle("Burning EPROM");
     r->setBarColor(Qt::red);
@@ -330,6 +337,7 @@ void MainWindow::on_blankButton_clicked()
 
         QObject::connect(serial,SIGNAL(readyRead()),this,SLOT(readSerial()));
         QThread::msleep(500);
+        serial->clear(QSerialPort::AllDirections);
         serial->write("U",1);
         serial->write(&readCommands[ui->epromSelector->currentIndex()],1);
 
@@ -391,11 +399,13 @@ void MainWindow::on_verifyButton_clicked()
         serial->setStopBits(QSerialPort::OneStop);
         QObject::connect(serial,SIGNAL(readyRead()),this,SLOT(readSerial()));
         QThread::msleep(500);
+        serial->clear(QSerialPort::AllDirections);
         serial->write("U",1);
         serial->write(&readCommands[ui->epromSelector->currentIndex()],1);
         r = new ReadingDialog(this);
         r->show();
         connect(r,SIGNAL(rejected()),this,SLOT(cancelReading()));
+        isEqual=true;
         readMode=2;
     }
 
