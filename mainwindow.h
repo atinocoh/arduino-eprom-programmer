@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QSerialPort>
+#include <QSaveFile>
 #include <QFile>
 #include <fstream>
 #include <iostream>
@@ -44,6 +45,8 @@ private slots:
 
     void writeEprom();
 
+    void on_baudsComboBox_activated(int index);
+
 private:
 
     void resetValues();
@@ -65,6 +68,7 @@ private:
     ReadingDialog *r;
     QByteArray *writeData;
     bool writeOrder;
+    unsigned long bauds;
 };
 
 #endif // MAINWINDOW_H
