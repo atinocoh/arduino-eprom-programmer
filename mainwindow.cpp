@@ -108,6 +108,7 @@ void MainWindow::on_readButton_clicked()
             serial->setParity(QSerialPort::NoParity);
             serial->setStopBits(QSerialPort::OneStop);
             QObject::connect(serial,SIGNAL(readyRead()),this,SLOT(readSerial()));
+<<<<<<< HEAD
         //    QThread::msleep(1000);
             serial->clear(QSerialPort::AllDirections);
             QThread::msleep(1000);
@@ -116,6 +117,13 @@ void MainWindow::on_readButton_clicked()
            // serial->flush();
 
          //   qDebug()<<readCommands[ui->epromSelector->currentIndex()];
+=======
+            QThread::msleep(500);
+            serial->clear(QSerialPort::AllDirections);
+            serial->write("U",1);
+            serial->write(&readCommands[ui->epromSelector->currentIndex()],1);
+            //qDebug()<<readCommands[ui->epromSelector->currentIndex()];
+>>>>>>> 025cddf6b5ea5fc4a909ca869c9989cdf08e68a7
             r = new ReadingDialog(this);
             r->show();
             r->setText("Reading EPROM content...",Qt::darkGreen);
@@ -124,12 +132,20 @@ void MainWindow::on_readButton_clicked()
             readMode=0;
         }
         else{
+<<<<<<< HEAD
           //  QMessageBox::information(0,"Error !!","Could not open port");
             QMessageBox::information(0,"Error !!",serial->errorString());
         }
     }
     else{
         //outputFile->close();
+=======
+            QMessageBox::information(0,"Error !!","Could not open port");
+        }
+    }
+    else{
+        outputFile->close();
+>>>>>>> 025cddf6b5ea5fc4a909ca869c9989cdf08e68a7
         QMessageBox::information(0,"Error !!","Could not open file");
     }
 }

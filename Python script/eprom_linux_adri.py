@@ -3,7 +3,11 @@ import serial
 import time #You need the pyserial library
 import struct      #For packing data into bytes
 
+<<<<<<< HEAD
 ser = serial.Serial('/dev/ttyACM0', 9600, timeout=0)
+=======
+ser = serial.Serial('/dev/ttyACM3', 250000, timeout=0)
+>>>>>>> 025cddf6b5ea5fc4a909ca869c9989cdf08e68a7
 #time.sleep(10);#my arduino bugs if data is written to the port after opening it
 #romsize=1024
 print("      ________    _________    _________    _________    _____________ ")
