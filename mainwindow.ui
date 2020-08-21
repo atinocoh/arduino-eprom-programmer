@@ -29,6 +29,11 @@
       <height>22</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <item>
      <property name="text">
       <string>27C801 (SNES)</string>
@@ -49,6 +54,11 @@
       <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>EPROM:</string>
     </property>
@@ -61,6 +71,11 @@
       <width>91</width>
       <height>81</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string/>
@@ -80,6 +95,11 @@
       <width>121</width>
       <height>321</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string/>
@@ -106,6 +126,11 @@
       <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Chip position:</string>
     </property>
@@ -119,6 +144,11 @@
       <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Jumper configuration (EPROM selector):</string>
     </property>
@@ -131,6 +161,11 @@
       <width>301</width>
       <height>251</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string/>
@@ -151,6 +186,11 @@
       <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Chip layout:</string>
     </property>
@@ -167,6 +207,11 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Read EPROM</string>
     </property>
@@ -182,6 +227,11 @@
       <width>121</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Write EPROM</string>
@@ -202,6 +252,11 @@
       <height>30</height>
      </size>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="readOnly">
      <bool>true</bool>
     </property>
@@ -214,6 +269,11 @@
       <width>151</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>BIN File to Wirte:</string>
@@ -231,6 +291,11 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Select File</string>
     </property>
@@ -243,6 +308,11 @@
       <width>111</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Port Selection:</string>
@@ -260,6 +330,11 @@
       <height>22</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
    </widget>
    <widget class="QPushButton" name="blankButton">
     <property name="enabled">
@@ -273,6 +348,11 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Blank Check</string>
     </property>
@@ -285,6 +365,11 @@
       <width>81</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Scan Ports</string>
@@ -302,6 +387,11 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>Verify EPROM</string>
     </property>
@@ -315,6 +405,11 @@
       <height>21</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -327,6 +422,11 @@
       <width>81</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Baud Rate:</string>
@@ -343,6 +443,11 @@
       <width>101</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <item>
      <property name="text">
@@ -384,6 +489,11 @@
       <height>61</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -401,7 +511,7 @@
      <x>0</x>
      <y>0</y>
      <width>852</width>
-     <height>25</height>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuAbout">

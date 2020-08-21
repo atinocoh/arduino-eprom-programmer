@@ -22,6 +22,11 @@
      <height>181</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -31,6 +36,11 @@
      <width>311</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Serial Ports Detected:</string>
@@ -44,6 +54,11 @@
      <width>97</width>
      <height>26</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Close</string>
